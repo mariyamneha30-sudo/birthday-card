@@ -1,0 +1,316 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+
+
+.secondary-button {
+  background: #fff0f5;
+  color: #c04478;
+  border: 1px solid #f0c4d5;
+}
+
+.secondary-button:hover {
+  background: #ffe0eb;
+  color: #a83268;
+}
+
+
+/* Theme selector */
+select {
+  width: 100%;
+  padding: 14px;
+  margin-top: 5px;
+  border: 1px solid #f0c4d5;
+  border-radius: 10px;
+  font-size: 15px;
+  background: white;
+  color: #713c58;
+  cursor: pointer;
+}
+
+/* Pink Love */
+.theme-pink {
+  background: linear-gradient(135deg, #fff0f5, #ffe0eb);
+}
+
+.theme-pink .birthday-card {
+  border: 2px solid #f7c3d6;
+}
+
+/* Purple Dream */
+.theme-purple {
+  background: linear-gradient(135deg, #f4eaff, #e4d5ff);
+}
+
+.theme-purple .content,
+.theme-purple .birthday-card,
+.theme-purple .envelope-section {
+  background: #fffaff;
+  border: 2px solid #d7b8f5;
+}
+
+.theme-purple h1 span,
+.theme-purple .birthday-card h1,
+.theme-purple .small-title {
+  color: #9560d4;
+}
+
+.theme-purple button {
+  background: #9560d4;
+}
+
+/* Blue Sky */
+.theme-blue {
+  background: linear-gradient(135deg, #e8f7ff, #d5eaff);
+}
+
+.theme-blue .content,
+.theme-blue .birthday-card,
+.theme-blue .envelope-section {
+  background: #faffff;
+  border: 2px solid #b8dafa;
+}
+
+.theme-blue h1 span,
+.theme-blue .birthday-card h1,
+.theme-blue .small-title {
+  color: #438cc9;
+}
+
+.theme-blue button {
+  background: #438cc9;
+}
+
+/* Golden Wishes */
+.theme-gold {
+  background: linear-gradient(135deg, #fff8df, #f8e8b9);
+}
+
+.theme-gold .content,
+.theme-gold .birthday-card,
+.theme-gold .envelope-section {
+  background: #fffdf5;
+  border: 2px solid #e8d08b;
+}
+
+.theme-gold h1 span,
+.theme-gold .birthday-card h1,
+.theme-gold .small-title {
+  color: #b18a2d;
+}
+
+.theme-gold button {
+  background: #b18a2d;
+}
+
+/* Theme button hover */
+.theme-purple button:hover {
+  background: #7945b5;
+}
+
+.theme-blue button:hover {
+  background: #2875b5;
+}
+
+.theme-gold button:hover {
+  background: #95701d;
+}
+
+
+.download-button {
+  background: #a879c9;
+  color: white;
+}
+
+.download-button:hover {
+  background: #8955ae;
+}
+
+
+/* Cute birthday template */
+.template-cute {
+  background: linear-gradient(145deg, #fff0f5, #ffe0eb);
+  border: 3px solid #f5b5ce;
+  border-radius: 30px;
+}
+
+.template-cute h1 {
+  color: #e66b9c;
+}
+
+/* Elegant birthday template */
+.template-elegant {
+  background: linear-gradient(145deg, #f5edff, #e8d9ff);
+  border: 3px solid #c9a8ef;
+  border-radius: 18px;
+  font-family: Georgia, serif;
+}
+
+.template-elegant h1 {
+  color: #8654b5;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.template-elegant h2 {
+  color: #8654b5;
+}
+
+/* Classic birthday template */
+.template-classic {
+  background: linear-gradient(145deg, #fff9e8, #f6e7bb);
+  border: 3px solid #d8b75e;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+}
+
+.template-classic h1 {
+  color: #a47b23;
+  font-family: Georgia, serif;
+}
+
+.template-classic h2 {
+  color: #8a6829;
+}
+
+ 
+.photo-preview {
+  display: block;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 15px auto;
+  border: 4px solid #f3a5c2;
+}
+
+.birthday-photo {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px auto;
+  border: 5px solid #f3a5c2;
+  box-shadow: 0 5px 20px #e66b9c44;
+}
+
+.birthday-card button {
+  border-radius: 25px;
+  padding: 12px 22px;
+  margin: 8px;
+  transition: 0.3s ease;
+}
+
+.birthday-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(200, 80, 130, 0.2);
+}
